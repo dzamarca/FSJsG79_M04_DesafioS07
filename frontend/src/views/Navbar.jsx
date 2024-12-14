@@ -1,5 +1,5 @@
 import { Container, Button, Navbar as NavbarAlias, Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 
@@ -8,20 +8,20 @@ const Navbar = () => {
   const token = false
   const botones = (token ?
     (<>
-      <Link to='/profile'>
+      <NavLink to='/profile'>
         <Button className="me-2" variant="outline-light">🔓Profile</Button>
-      </Link>
-      <Link to='/logout'>
+      </NavLink>
+      <NavLink to='/logout'>
         <Button className="me-2" variant="outline-light">🔒Logount</Button>
-      </Link>
+      </NavLink>
     </>) :
     (<>
-      <Link to='/login'>
+      <NavLink to='/login'>
         <Button className="me-2" variant="outline-light">🔐Login</Button>
-      </Link>
-      <Link to='/register'>
+      </NavLink>
+      <NavLink to='/register'>
         <Button className="me-2" variant="outline-light">🔐Registrer</Button>
-      </Link>
+      </NavLink>
     </>)
   )
 
@@ -33,15 +33,15 @@ const Navbar = () => {
           <NavbarAlias.Toggle aria-controls="basic-navbar-nav" />
           <NavbarAlias.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Link to='/'>
+              <NavLink to='/'>
                 <Button className="me-2" variant="outline-light">🍕Home</Button>
-              </Link>
+              </NavLink>
               {botones}
             </Nav>
             <Nav className='justify-content-end'>
-              <Link to='/cart'>
+              <NavLink to='/cart'>
                 <Button variant="outline-light">🛒Total: ${handleCalculaTotal()}</Button>
-              </Link>
+              </NavLink>
             </Nav>
           </NavbarAlias.Collapse>
         </Container>

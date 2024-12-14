@@ -1,12 +1,15 @@
 import { Card, Button } from "react-bootstrap"
 import { setearValor } from '../../assets/utils/funciones.js'
 import './CardPizza.css'
-import { Link } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 
 const CardPizza = ({pizza, id, name, price, ingredients, img, desc ="" }) => {
   const {handleAgrega} = useContext(CartContext)
+
+  const navigate = useNavigate()
+  const isAPizza = ()=>{ navigate(`/pizza/${id}`) }
 
   return (
     <Card className="card mt-3" bg="light">
@@ -26,9 +29,9 @@ const CardPizza = ({pizza, id, name, price, ingredients, img, desc ="" }) => {
       <Card.Footer>
         <p className="precio">Precio ${setearValor(price)}</p>
         <div className="d-flex justify-content-evenly">
-          <Link to='/pizza/p001'>
-          <Button variant="outline-dark">Ver Más 👀</Button>
-          </Link>
+          {/* <NavLink to='/pizza/:id'> */}
+          <Button variant="outline-dark" onClick={isAPizza}>Ver Más 👀</Button>
+          {/* </NavLink> */}
           <Button variant="dark" onClick={()=>handleAgrega(pizza)}>Añadir 🛒</Button>
         </div>
       </Card.Footer>

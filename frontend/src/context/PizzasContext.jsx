@@ -1,8 +1,8 @@
 import { createContext, useEffect, useState } from 'react'
 
-export const PizzaContext = createContext()
+export const PizzasContext = createContext()
 
-const PizzaProvider = ({ children }) => {
+const PizzasProvider = ({ children }) => {
     const [pizzas, setPizzas] = useState([])
     const URL = 'http://localhost:5000/api/pizzas'
     useEffect(() => {
@@ -15,10 +15,10 @@ const PizzaProvider = ({ children }) => {
     }, [])
 
     return (
-        <PizzaContext.Provider value={pizzas}>
+        <PizzasContext.Provider value={pizzas}>
             {children}
-        </PizzaContext.Provider>
+        </PizzasContext.Provider>
     )
 }
 
-export default PizzaProvider
+export default PizzasProvider

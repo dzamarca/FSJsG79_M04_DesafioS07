@@ -2,11 +2,10 @@ import { useContext, useEffect, useState } from 'react'
 import CardPizza from "../../components/CardPizza/CardPizza"
 import Header from '../../components/Header/Header'
 import './Home.css'
-import { PizzaContext } from '../../context/PizzaContext'
+import { PizzasContext } from '../../context/PizzasContext'
 
 const Home = () => {
-  const pizzas = useContext(PizzaContext)
-
+  const pizzas = useContext(PizzasContext)
   return (
     <>
       <Header />
