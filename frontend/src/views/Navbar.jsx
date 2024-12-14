@@ -1,18 +1,23 @@
 import { Container, Button, Navbar as NavbarAlias, Nav } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
+import {UserContext} from '../context/UserContext';
 
 const Navbar = () => {
   const {handleCalculaTotal} = useContext(CartContext)
-  const token = false
+  const {token,logout} = useContext(UserContext)
+
+  
+
+
   const botones = (token ?
     (<>
       <NavLink to='/profile'>
         <Button className="me-2" variant="outline-light">🔓Profile</Button>
       </NavLink>
-      <NavLink to='/logout'>
-        <Button className="me-2" variant="outline-light">🔒Logount</Button>
+      <NavLink>
+        <Button className="me-2" variant="outline-light" onClick={logout}>🔒Logount</Button>
       </NavLink>
     </>) :
     (<>

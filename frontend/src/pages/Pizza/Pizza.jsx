@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect } from "react"
 import CardPizza from "../../components/CardPizza/CardPizza"
 import { useParams } from "react-router-dom"
 

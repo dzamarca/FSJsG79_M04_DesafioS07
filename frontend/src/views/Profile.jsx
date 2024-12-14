@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Button } from "react-bootstrap"
+import { useContext } from 'react';
+import { UserContext } from '../context/UserContext';
 
 const Profile = () => {
+    const {logout} = useContext(UserContext)
     return (
         <div className="d-flex flex-column align-content-between align-items-center">
             <div className=" box d-flex justify-content-center align-items-center mt-2 radius">
@@ -10,7 +13,7 @@ const Profile = () => {
                     <div className="boxProfile"></div>
                     <p>Usuario: <strong>dzamarca@gmail.com</strong></p>
                     <Link to='/'>
-                        <Button variant="dark">Cerrar sesion 🏠🍕</Button>
+                        <Button variant="dark" onClick={logout}>Cerrar sesion 🏠🍕</Button>
                     </Link>
                 </div>
             </div>

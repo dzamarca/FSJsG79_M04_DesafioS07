@@ -5,11 +5,13 @@ import { Home, LoginPage, RegistrerPages, Cart, Pizza } from './pages/index'
 import { Footer, Navbar, NotFound, Profile } from './views/index';
 import CardProvider from "./context/CartContext";
 import PizzasProvider from "./context/PizzasContext";
+import UserProvider from "./context/UserContext"
 
 function App() {
   return (
     <BrowserRouter>
-      <PizzasProvider>
+      <UserProvider>
+        <PizzasProvider>
           <CardProvider>
             <Navbar />
             <Routes>
@@ -24,7 +26,8 @@ function App() {
             </Routes>
             <Footer />
           </CardProvider>
-      </PizzasProvider>
+        </PizzasProvider>
+      </UserProvider>
     </BrowserRouter>
   )
 }
