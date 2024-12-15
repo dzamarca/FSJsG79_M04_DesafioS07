@@ -7,10 +7,6 @@ import {UserContext} from '../context/UserContext';
 const Navbar = () => {
   const {handleCalculaTotal} = useContext(CartContext)
   const {token,logout} = useContext(UserContext)
-
-  
-
-
   const botones = (token ?
     (<>
       <NavLink to='/profile'>
@@ -34,7 +30,7 @@ const Navbar = () => {
     <>
       <NavbarAlias expand="lg" bg="dark" className='justify-content-between' data-bs-theme="dark">
         <Container>
-          <NavbarAlias.Brand href="#home">¡Pizzeria Mamma Mia!</NavbarAlias.Brand>
+          <NavbarAlias.Brand >¡Pizzeria Mamma Mia!</NavbarAlias.Brand>
           <NavbarAlias.Toggle aria-controls="basic-navbar-nav" />
           <NavbarAlias.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
