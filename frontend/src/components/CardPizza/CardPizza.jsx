@@ -26,7 +26,7 @@ const CardPizza = ({ pizza, id, name, price, ingredients, img, desc = "" }) => {
         <p className="precio">Precio ${setearValor(price)}</p>
         <div className="d-flex justify-content-evenly">
           <NavLink to={`/pizza/${id}`}>
-            <button className="btn btn-light  border-dark" >Ver Más 👀</button>
+            <button className="btn btn-light border-dark" >Ver Más 👀</button>
           </NavLink>
           <button className="btn btn-dark" onClick={() => handleAgrega(pizza)}>Añadir 🛒</button>
         </div>
