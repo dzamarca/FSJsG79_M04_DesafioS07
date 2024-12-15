@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Button } from "react-bootstrap"
-
 
 const NotFound = () => {
     return (
@@ -12,7 +10,7 @@ const NotFound = () => {
                     <h1>Ups algo salió mal</h1>
                     <h3>🍕😖😵🍕</h3>
                     <Link to='/'>
-                        <Button variant="dark">Regresar a Home 🏠🍕</Button>
+                        <button className='btn btn-dark'>Regresar a Home 🏠🍕</button>
                     </Link>
                 </div>
             </div>
