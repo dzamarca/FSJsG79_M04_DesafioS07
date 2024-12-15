@@ -38,7 +38,6 @@ const RegistrerPages = () => {
     }
 
     return (
- 
         <div className="d-flex flex-column justify-content-center align-items-center">
             <div className=" box d-flex justify-content-center align-items-center mt-2 radius">
                 <div className="boxImage"></div>
@@ -69,9 +68,9 @@ const RegistrerPages = () => {
                                 onChange={(e) => setPassword2(e.target.value)}
                             />
                         </Form.Group>
-                        <Button variant="dark" type="submit">
+                        <button className="btn btn-dark" type="submit">
                             Registro
-                        </Button>
+                        </button>
                     </Form>
                 </div>
             </div>
