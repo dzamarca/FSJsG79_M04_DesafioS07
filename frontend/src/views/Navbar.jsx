@@ -12,7 +12,7 @@ const Navbar = () => {
       <NavLink to='/profile'>
         <Button className="me-2" variant="outline-light">🔓Profile</Button>
       </NavLink>
-      <NavLink>
+      <NavLink to='login'>
         <Button className="me-2" variant="outline-light" onClick={logout}>🔒Logount</Button>
       </NavLink>
     </>) :
