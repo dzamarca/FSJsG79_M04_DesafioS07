@@ -16,7 +16,6 @@ const Pizza = () => {
         loadPizza()
     }, [])
 
-
     return (
         <div className='boxCards'>
             {pizzaUnitaria.map(pizza => (
