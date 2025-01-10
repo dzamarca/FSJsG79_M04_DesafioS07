@@ -1,12 +1,15 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Form } from "react-bootstrap"
 import "./login.css"
 import Swal from 'sweetalert2'
+import { UserContext } from "../../context/UserContext"
 
 
 const LoginPage = () => {
     const [mail, setMail] = useState("")
     const [password, setPassword] = useState("")
+
+    const {login} = useContext(UserContext)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -24,10 +27,13 @@ const LoginPage = () => {
             });
             return
         }
-        Swal.fire({
-            text: 'Inicio de sesión exitoso',
-            icon: 'success'
-        });
+
+        login(mail,password);
+
+        // Swal.fire({
+        //     text: 'Inicio de sesión exitoso',
+        //     icon: 'success'
+        // });
     }
 
     return (
